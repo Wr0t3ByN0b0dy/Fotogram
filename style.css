@@ -29,7 +29,6 @@
 /*Start - Content Klassen */
 .main-container {
   background: rgb(9, 54, 72);
-  height: 100vh;
   padding-top: 64px;
 }
 .headline {
@@ -52,6 +51,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .img-button {
