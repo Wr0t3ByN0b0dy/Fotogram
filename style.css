@@ -1,3 +1,4 @@
+/*Start - Basis Klassen */
 * {
   margin: 0;
 }
@@ -7,8 +8,15 @@
   padding-right: 64px;
 }
 
+.px-160 {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+/*Ende - Basis Klassen */
+
+/*Start - Header Klassen */
 .main-header {
-  background: rgb(8, 32, 40);
+  background: rgb(8, 26, 37);
   height: 100px;
   display: flex;
 }
@@ -16,3 +24,46 @@
 .logo-img {
   width: 350px;
 }
+/*Ende - Header Klassen */
+
+/*Start - Content Klassen */
+.main-container {
+  background: rgb(9, 54, 72);
+  height: 100vh;
+  padding-top: 64px;
+}
+.headline {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 64px;
+}
+
+.main-img {
+  width: 128px;
+  height: 128px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.img-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 16px 16px;
+}
+
+.img-button:hover {
+  cursor: pointer;
+
+  .main-img {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+  }
+}
+/*Ende - Content Klassen */

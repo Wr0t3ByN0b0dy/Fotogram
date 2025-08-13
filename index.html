@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
 
-    <script src="script.js"></script>
-
     <title>Fotogram</title>
   </head>
-  <body>
+
+  <body onload="initRenderImgs()">
     <header class="main-header px-64">
       <img class="logo-img" src="./img/Fotogram_Logo.svg" alt="" />
     </header>
+
+    <main class="main-container px-160">
+      <section id="main-content">
+        <h1 class="headline">Mein Urlaubsfotoalbum</h1>
+        <div id="images" class="img-container"></div>
+      </section>
+    </main>
   </body>
+
+  <script src="script.js"></script>
 </html>
