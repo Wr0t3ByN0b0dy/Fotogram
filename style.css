@@ -30,6 +30,7 @@
 /*Start - Content Klassen */
 .main-container {
   background: rgb(9, 54, 72);
+  height: 100vh;
   padding-top: 64px;
 }
 .headline {
@@ -41,8 +42,8 @@
 }
 
 .main-img {
-  width: 128px;
-  height: 128px;
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
   transition: box-shadow 0.3s ease;
   object-fit: cover;

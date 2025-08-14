@@ -3,19 +3,19 @@ const IMAGE_DIALOG = document.getElementById("show-image");
 
 const IMG_DATA = {
   urlaub1: {
-    headline: "Verona - Italien",
+    headline: "Blick über die Dächer von Verona - Italiens historische Perle",
     description:
       "Ein Panorama aus roten Ziegeldächern, engen Gassen und markanten Kirchtürmen, eingerahmt von sanften Hügeln dieser Ausblick fängt den unverwechselbaren Charme Veronas ein, wo Geschichte, Architektur und mediterrane Atmosphäre aufeinandertreffen.",
     url: "./img/pictures/urlaub1.jpg",
   },
   urlaub2: {
-    headline: "Gardasee - Italien",
+    headline: "Idyllischer Ausblick auf den Gardasee",
     description:
       "Eine ruhige Landstraße führt vorbei an sanften Hügeln, Olivenhainen und malerischen Häusern im Hintergrund glitzert der Gardasee unter einem strahlend blauen Himmel.",
     url: "./img/pictures/urlaub2.jpg",
   },
   urlaub3: {
-    headline: "Maspalomas - Gran Canaria, Spanien",
+    headline: "Weite Dünenlandschaft von Maspalomas",
     description:
       "Endlose Sandhügel ziehen sich bis zum Meer, begleitet von dramatisch bewölktem Himmel die Dünen von Maspalomas vereinen Wüstenflair und Küstenpanorama zu einer einzigartigen Szenerie.",
     url: "./img/pictures/urlaub3.jpg",
