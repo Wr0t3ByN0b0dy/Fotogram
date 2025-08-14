@@ -107,18 +107,19 @@ function showImgDialog(element) {
 
   if (data) {
     IMAGE_DIALOG.innerHTML = `
-      <header>
-          <h2>${data.headline}</h2>
-          <p>${data.description}</p>
-          <button onclick="closeDialog(IMAGE_DIALOG)">Close</button>
-      </header>
-      <section>
+      <header class="img-dialog-header">
+          <h2 class="img-dialog-headline py-16">${data.headline}</h2>
+          <div>
+            <p class="img-dialog-description">${data.description}</p>
+          </div>
+          </header>
+      <section class="img-dialog-main py-16">
           <img class="dialog-img" src="${data.url}" alt="${data.headline}" />
       </section>
-      <footer>
-          <button></button>
+      <footer class="img-dialog-footer py-16">
+          <button>Vorher</button>
           <p>${keysIndex} / ${keysLength}</p>
-          <button></button>
+          <button>Nachher</button>
       </footer>`;
 
     openDialog(IMAGE_DIALOG);
@@ -131,6 +132,15 @@ function openDialog(dialogID) {
   dialogID.showModal();
 }
 
-function closeDialog(dialogID) {
-  dialogID.close();
-}
+IMAGE_DIALOG.addEventListener("click", (event) => {
+  const rect = IMAGE_DIALOG.getBoundingClientRect();
+  const clickedInDialog =
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom;
+
+  if (!clickedInDialog) {
+    IMAGE_DIALOG.close();
+  }
+});
