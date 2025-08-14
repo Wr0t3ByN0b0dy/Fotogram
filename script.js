@@ -1,4 +1,5 @@
 const IMAGES_CONTAINER = document.getElementById("images");
+const IMAGE_DIALOG = document.getElementById("show-image");
 
 const IMG_DATA = {
   urlaub1: {
@@ -8,13 +9,15 @@ const IMG_DATA = {
     url: "./img/pictures/urlaub1.jpg",
   },
   urlaub2: {
-    headline: "Test2 Headline",
-    description: "Test2 Description",
+    headline: "Gardasee - Italien",
+    description:
+      "Eine ruhige Landstraße führt vorbei an sanften Hügeln, Olivenhainen und malerischen Häusern im Hintergrund glitzert der Gardasee unter einem strahlend blauen Himmel.",
     url: "./img/pictures/urlaub2.jpg",
   },
   urlaub3: {
-    headline: "Test Headline",
-    description: "Test Description",
+    headline: "Maspalomas - Gran Canaria, Spanien",
+    description:
+      "Endlose Sandhügel ziehen sich bis zum Meer, begleitet von dramatisch bewölktem Himmel die Dünen von Maspalomas vereinen Wüstenflair und Küstenpanorama zu einer einzigartigen Szenerie.",
     url: "./img/pictures/urlaub3.jpg",
   },
   urlaub4: {
@@ -96,15 +99,38 @@ function initRenderImgs() {
 function showImgDialog(element) {
   let img = element.querySelector("img");
   let src = img.getAttribute("src");
-  let dataKey = src.split("/").pop().replace(".jpg", "");
-  let data = IMG_DATA[dataKey];
-
-  console.log(dataKey, data);
+  let dataKeys = src.split("/").pop().replace(".jpg", "");
+  let data = IMG_DATA[dataKeys];
+  let allDataKeys = Object.keys(IMG_DATA);
+  let keysLength = allDataKeys.length;
+  let keysIndex = allDataKeys.indexOf(dataKeys) + 1;
 
   if (data) {
-    console.log("Headline:", data.headline);
-    console.log("Description:", data.description);
+    IMAGE_DIALOG.innerHTML = `
+      <header>
+          <h2>${data.headline}</h2>
+          <p>${data.description}</p>
+          <button onclick="closeDialog(IMAGE_DIALOG)">Close</button>
+      </header>
+      <section>
+          <img class="dialog-img" src="${data.url}" alt="${data.headline}" />
+      </section>
+      <footer>
+          <button></button>
+          <p>${keysIndex} / ${keysLength}</p>
+          <button></button>
+      </footer>`;
+
+    openDialog(IMAGE_DIALOG);
   } else {
-    console.warn(`Keine Daten für ${dataKey} gefunden`);
+    console.warn(`Keine Daten für ${dataKeys} gefunden`);
   }
+}
+
+function openDialog(dialogID) {
+  dialogID.showModal();
+}
+
+function closeDialog(dialogID) {
+  dialogID.close();
 }
