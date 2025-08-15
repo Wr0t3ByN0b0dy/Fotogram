@@ -38,11 +38,12 @@
   height: 100vh;
   padding-top: 64px;
 }
+
 .headline {
   color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-  font-size: 32px;
+  font-size: 54px;
   margin-bottom: 64px;
 }
 
@@ -76,9 +77,11 @@
 }
 /*Ende - Content Klassen */
 
+/* Start - Image Dialog Klassen */
 .dialog-img {
   width: 75%;
 }
+
 .dialog-container {
   width: 1200px;
   position: fixed;
@@ -105,3 +108,4 @@
   justify-content: center;
   gap: 8px;
 }
+/* Ende - Image Dialog Klassen */

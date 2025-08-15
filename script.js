@@ -109,17 +109,15 @@ function showImgDialog(element) {
     IMAGE_DIALOG.innerHTML = `
       <header class="img-dialog-header">
           <h2 class="img-dialog-headline py-16">${data.headline}</h2>
-          <div>
-            <p class="img-dialog-description">${data.description}</p>
-          </div>
+          <p class="img-dialog-description">${data.description}</p>
           </header>
       <section class="img-dialog-main py-16">
-          <img class="dialog-img" src="${data.url}" alt="${data.headline}" />
+          <img class="dialog-img" id="dialog-image" src="${data.url}" alt="${data.headline}" />
       </section>
       <footer class="img-dialog-footer py-16">
           <button>Vorher</button>
           <p>${keysIndex} / ${keysLength}</p>
-          <button>Nachher</button>
+          <button onclick="nextImg()">Nachher</button>
       </footer>`;
 
     openDialog(IMAGE_DIALOG);
@@ -132,6 +130,7 @@ function openDialog(dialogID) {
   dialogID.showModal();
 }
 
+// Close Dialog
 IMAGE_DIALOG.addEventListener("click", (event) => {
   const rect = IMAGE_DIALOG.getBoundingClientRect();
   const clickedInDialog =
@@ -144,3 +143,42 @@ IMAGE_DIALOG.addEventListener("click", (event) => {
     IMAGE_DIALOG.close();
   }
 });
+
+function nextImg() {
+  let dialogImgRef = document.getElementById("dialog-image");
+  let src = dialogImgRef.getAttribute("src");
+  let dataKey = src.split("/").pop().replace(".jpg", "");
+  let allDataKeys = Object.keys(IMG_DATA);
+  let keysLength = allDataKeys.length;
+  let currentImgIndex = allDataKeys.indexOf(dataKey);
+  let nextImgIndex = allDataKeys.indexOf(dataKey) + 1;
+
+  if (currentImgIndex > 14) {
+    nextImgIndex = 0;
+  }
+
+  let nextKey = Object.keys(IMG_DATA)[nextImgIndex];
+  let data = IMG_DATA[nextKey];
+
+  if (data) {
+    IMAGE_DIALOG.innerHTML = `
+      <header class="img-dialog-header">
+          <h2 class="img-dialog-headline py-16">${data.headline}</h2>
+          <p class="img-dialog-description">${data.description}</p>
+          </header>
+      <section class="img-dialog-main py-16">
+          <img class="dialog-img" id="dialog-image" src="${data.url}" alt="${
+      data.headline
+    }" />
+      </section>
+      <footer class="img-dialog-footer py-16">
+          <button>Vorher</button>
+          <p>${nextImgIndex + 1} / ${keysLength}</p>
+          <button onclick="nextImg()">Nachher</button>
+      </footer>`;
+
+    openDialog(IMAGE_DIALOG);
+  } else {
+    console.warn(`Keine Daten für ${dataKey} gefunden`);
+  }
+}
