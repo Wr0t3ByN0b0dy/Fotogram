@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
 
     <title>Fotogram</title>
   </head>
-
-  <body onload="initRenderImgs()">
-    <header class="main-header px-64">
-      <img class="logo-img" src="./img/Fotogram_Logo.svg" alt="" />
+  <body onload="initRenderImages()">
+    <header class="site-header px-64">
+      <img
+        class="site-logo"
+        src="img/Fotogram_Logo.svg"
+        alt="Fotogram Seiten Logo"
+      />
     </header>
 
-    <main class="main-container px-160">
-      <section id="main-content">
-        <h1 class="headline">Mein Urlaubsfotoalbum</h1>
-        <div id="images" class="img-container"></div>
-      </section>
-
-      <dialog class="dialog-container" id="show-image"></dialog>
+    <main class="content px-160">
+      <h1 class="title">Your personal photo album</h1>
+      <div id="photo-gallery" class="gallery"></div>
     </main>
+
+    <dialog class="photo-dialog" id="image-viewer"></dialog>
   </body>
 
   <script src="script.js"></script>

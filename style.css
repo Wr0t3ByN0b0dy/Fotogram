@@ -4,9 +4,28 @@
   padding: 0;
 }
 
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
 .py-16 {
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+.py-32 {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .px-64 {
@@ -18,28 +37,36 @@
   padding-left: 160px;
   padding-right: 160px;
 }
+
+.align-flex-end {
+  align-self: flex-end;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 /*Ende - Basis Klassen */
 
 /*Start - Header Klassen */
-.main-header {
+.site-header {
   background: rgb(8, 26, 37);
   height: 100px;
   display: flex;
 }
 
-.logo-img {
+.site-logo {
   width: 350px;
 }
 /*Ende - Header Klassen */
 
 /*Start - Content Klassen */
-.main-container {
+.content {
   background: rgb(9, 54, 72);
   height: 100vh;
   padding-top: 64px;
 }
 
-.headline {
+.title {
   color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
@@ -47,7 +74,14 @@
   margin-bottom: 64px;
 }
 
-.main-img {
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.picture-showcase {
   width: 150px;
   height: 150px;
   border-radius: 8px;
@@ -55,23 +89,16 @@
   object-fit: cover;
 }
 
-.img-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.img-button {
+.picture-button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding: 16px 16px;
 }
 
-.img-button:hover {
+.picture-button:hover {
   cursor: pointer;
 
-  .main-img {
+  .picture-showcase {
     box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
   }
 }
@@ -79,33 +106,46 @@
 
 /* Start - Image Dialog Klassen */
 .dialog-img {
-  width: 75%;
+  object-fit: cover;
+  height: 500px;
+  width: 1400px;
 }
 
-.dialog-container {
-  width: 1200px;
+.photo-dialog {
+  padding: 0px 40px 0px 40px;
+  height: 750px;
+  width: 1128px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgb(22, 50, 59);
 }
 
-.img-dialog-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.img-dialog-main {
+.dialog-header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.img-dialog-footer {
+.dialog-content {
   display: flex;
   justify-content: center;
-  gap: 8px;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.dialog-button {
+  height: 32px;
+}
+
+.photo-title {
+  font-size: 32px;
+  color: rgb(255, 255, 255);
 }
 /* Ende - Image Dialog Klassen */

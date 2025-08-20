@@ -1,214 +1,85 @@
-const IMAGES_CONTAINER = document.getElementById("images");
-const IMAGE_DIALOG = document.getElementById("show-image");
+const IMG_GALLERY = document.getElementById("photo-gallery");
+const IMG_DIALOG = document.getElementById("image-viewer");
+const BODY = document.getElementsByTagName("body")[0];
+const IMG_DATA = [
+  { src: "img/pictures/urlaub1.jpg", alt: "Test-Urlaub Nummer: 1" },
+  { src: "img/pictures/urlaub2.jpg", alt: "Test-Urlaub Nummer: 2" },
+  { src: "img/pictures/urlaub3.jpg", alt: "Test-Urlaub Nummer: 3" },
+  { src: "img/pictures/urlaub4.jpg", alt: "Test-Urlaub Nummer: 4" },
+  { src: "img/pictures/urlaub5.jpg", alt: "Test-Urlaub Nummer: 5" },
+  { src: "img/pictures/urlaub6.jpg", alt: "Test-Urlaub Nummer: 6" },
+  { src: "img/pictures/urlaub7.jpg", alt: "Test-Urlaub Nummer: 7" },
+  { src: "img/pictures/urlaub8.jpg", alt: "Test-Urlaub Nummer: 8" },
+  { src: "img/pictures/urlaub9.jpg", alt: "Test-Urlaub Nummer: 9" },
+  { src: "img/pictures/urlaub10.jpg", alt: "Test-Urlaub Nummer: 10" },
+  { src: "img/pictures/urlaub11.jpg", alt: "Test-Urlaub Nummer: 11" },
+  { src: "img/pictures/urlaub12.jpg", alt: "Test-Urlaub Nummer: 12" },
+  { src: "img/pictures/urlaub13.jpg", alt: "Test-Urlaub Nummer: 13" },
+  { src: "img/pictures/urlaub14.jpg", alt: "Test-Urlaub Nummer: 14" },
+  { src: "img/pictures/urlaub15.jpg", alt: "Test-Urlaub Nummer: 15" },
+  { src: "img/pictures/urlaub16.jpg", alt: "Test-Urlaub Nummer: 16" },
+];
 
-const IMG_DATA = {
-  urlaub1: {
-    headline: "Blick über die Dächer von Verona - Italiens historische Perle",
-    description:
-      "Ein Panorama aus roten Ziegeldächern, engen Gassen und markanten Kirchtürmen, eingerahmt von sanften Hügeln dieser Ausblick fängt den unverwechselbaren Charme Veronas ein, wo Geschichte, Architektur und mediterrane Atmosphäre aufeinandertreffen.",
-    url: "./img/pictures/urlaub1.jpg",
-  },
-  urlaub2: {
-    headline: "Idyllischer Ausblick auf den Gardasee",
-    description:
-      "Eine ruhige Landstraße führt vorbei an sanften Hügeln, Olivenhainen und malerischen Häusern im Hintergrund glitzert der Gardasee unter einem strahlend blauen Himmel.",
-    url: "./img/pictures/urlaub2.jpg",
-  },
-  urlaub3: {
-    headline: "Weite Dünenlandschaft von Maspalomas",
-    description:
-      "Endlose Sandhügel ziehen sich bis zum Meer, begleitet von dramatisch bewölktem Himmel die Dünen von Maspalomas vereinen Wüstenflair und Küstenpanorama zu einer einzigartigen Szenerie.",
-    url: "./img/pictures/urlaub3.jpg",
-  },
-  urlaub4: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub4.jpg",
-  },
-  urlaub5: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub5.jpg",
-  },
-  urlaub6: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub6.jpg",
-  },
-  urlaub7: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub7.jpg",
-  },
-  urlaub8: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub8.jpg",
-  },
-  urlaub9: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub9.jpg",
-  },
-  urlaub10: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub10.jpg",
-  },
-  urlaub11: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub11.jpg",
-  },
-  urlaub12: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub12.jpg",
-  },
-  urlaub13: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub13.jpg",
-  },
-  urlaub14: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub14.jpg",
-  },
-  urlaub15: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub15.jpg",
-  },
-  urlaub16: {
-    headline: "Test Headline",
-    description: "Test Description",
-    url: "./img/pictures/urlaub16.jpg",
-  },
-};
-
-function initRenderImgs() {
-  Object.entries(IMG_DATA).forEach(([key, data]) => {
-    IMAGES_CONTAINER.innerHTML += `
-      <button class="img-button" onclick="showImgDialog(this)">
-        <img class="main-img" src="${data.url}" alt="${data.headline}" />
-      </button>`;
-  });
+function initRenderImages() {
+  IMG_GALLERY.innerHTML = IMG_DATA.map(
+    (img, index) =>
+      `<button class="picture-button" onclick="openPhotoDialog(${index})">
+        <img class="picture-showcase" src="${img.src}" alt="${img.alt}" />
+      </button>`
+  ).join("");
 }
 
-function showImgDialog(element) {
-  let img = element.querySelector("img");
-  let src = img.getAttribute("src");
-  let dataKeys = src.split("/").pop().replace(".jpg", "");
-  let data = IMG_DATA[dataKeys];
-  let allDataKeys = Object.keys(IMG_DATA);
-  let keysLength = allDataKeys.length;
-  let keysIndex = allDataKeys.indexOf(dataKeys) + 1;
+function openPhotoDialog(index) {
+  IMG_DIALOG.innerHTML = createDialogContent(index);
+  IMG_DIALOG.showModal();
+  BODY.classList.toggle("over-hidden");
+  IMG_DIALOG.classList.add("d-flex");
+}
 
-  if (data) {
-    IMAGE_DIALOG.innerHTML = `
-      <header class="img-dialog-header">
-          <h2 class="img-dialog-headline py-16">${data.headline}</h2>
-          <p class="img-dialog-description">${data.description}</p>
-          </header>
-      <section class="img-dialog-main py-16">
-          <img class="dialog-img" id="dialog-image" src="${data.url}" alt="${data.headline}" />
-      </section>
-      <footer class="img-dialog-footer py-16">
-          <button onclick="prevImg()">Vorher</button>
-          <p>${keysIndex} / ${keysLength}</p>
-          <button onclick="nextImg()">Nachher</button>
-      </footer>`;
+function createDialogContent(index) {
+  return `
+    <header class="dialog-header">
+      <h2 class="photo-title">${IMG_DATA[index].alt}</h2>
+    </header>
 
-    openDialog(IMAGE_DIALOG);
-  } else {
-    console.warn(`Keine Daten für ${dataKeys} gefunden`);
+    <main class="dialog-content">
+      <img class="dialog-img" id="dialog-image" src="${
+        IMG_DATA[index].src
+      }" alt="${IMG_DATA[index].alt}" />
+    </main>
+
+    <footer class="dialog-footer">
+      <button class="dialog-button" onclick="navigateImages('prev', ${index})">zurück</button>
+        <p>${index + 1} / ${IMG_DATA.length}</p>
+      <button class="dialog-button" onclick="navigateImages('next', ${index})">Vor</button>
+    </footer>
+  `;
+}
+
+function navigateImages(direction, index) {
+  if (direction === "next") {
+    IMG_DIALOG.innerHTML = createDialogContent((index + 1) % IMG_DATA.length);
   }
-}
-
-function openDialog(dialogID) {
-  dialogID.showModal();
+  if (direction === "prev") {
+    IMG_DIALOG.innerHTML = createDialogContent(
+      (index - 1 + IMG_DATA.length) % IMG_DATA.length
+    );
+  }
 }
 
 // Close Dialog
-IMAGE_DIALOG.addEventListener("click", (event) => {
-  if (event.target === IMAGE_DIALOG) {
-    IMAGE_DIALOG.close();
+IMG_DIALOG.addEventListener("click", (event) => {
+  const rect = IMG_DIALOG.getBoundingClientRect();
+
+  const inDialog =
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom;
+
+  if (!inDialog) {
+    IMG_DIALOG.close();
+    BODY.classList.toggle("over-hidden");
+    IMG_DIALOG.classList.remove("d-flex");
   }
 });
-
-function nextImg() {
-  let dialogImgRef = document.getElementById("dialog-image");
-  let src = dialogImgRef.getAttribute("src");
-  let dataKey = src.split("/").pop().replace(".jpg", "");
-  let allDataKeys = Object.keys(IMG_DATA);
-  let keysLength = allDataKeys.length;
-  let currentImgIndex = allDataKeys.indexOf(dataKey);
-  let nextImgIndex = allDataKeys.indexOf(dataKey) + 1;
-
-  if (currentImgIndex > 14) {
-    nextImgIndex = 0;
-  }
-
-  let nextKey = Object.keys(IMG_DATA)[nextImgIndex];
-  let data = IMG_DATA[nextKey];
-
-  if (data) {
-    IMAGE_DIALOG.innerHTML = `
-      <header class="img-dialog-header">
-          <h2 class="img-dialog-headline py-16">${data.headline}</h2>
-          <p class="img-dialog-description">${data.description}</p>
-          </header>
-      <section class="img-dialog-main py-16">
-          <img class="dialog-img" id="dialog-image" src="${data.url}" alt="${
-      data.headline
-    }" />
-      </section>
-      <footer class="img-dialog-footer py-16">
-          <button onclick="prevImg()">Vorher</button>
-          <p>${nextImgIndex + 1} / ${keysLength}</p>
-          <button onclick="nextImg()">Nachher</button>
-      </footer>`;
-
-    openDialog(IMAGE_DIALOG);
-  } else {
-    console.warn(`Keine Daten für ${dataKey} gefunden`);
-  }
-}
-
-function prevImg() {
-  let dialogImgRef = document.getElementById("dialog-image");
-  let src = dialogImgRef.getAttribute("src");
-  let dataKey = src.split("/").pop().replace(".jpg", "");
-  let allDataKeys = Object.keys(IMG_DATA);
-  let keysLength = allDataKeys.length;
-  let currentImgIndex = allDataKeys.indexOf(dataKey);
-  let nextImgIndex = allDataKeys.indexOf(dataKey) - 1;
-
-  if (currentImgIndex == 0) {
-    nextImgIndex = 15;
-  }
-
-  let nextKey = Object.keys(IMG_DATA)[nextImgIndex];
-  let data = IMG_DATA[nextKey];
-
-  if (data) {
-    IMAGE_DIALOG.innerHTML = `
-      <header class="img-dialog-header">
-          <h2 class="img-dialog-headline py-16">${data.headline}</h2>
-          <p class="img-dialog-description">${data.description}</p>
-          </header>
-      <section class="img-dialog-main py-16">
-          <img class="dialog-img" id="dialog-image" src="${data.url}" alt="${
-      data.headline
-    }" />
-      </section>
-      <footer class="img-dialog-footer py-16">
-          <button onclick="prevImg()">Vorher</button>
-          <p>${nextImgIndex + 1} / ${keysLength}</p>
-          <button onclick="nextImg()">Nachher</button>
-      </footer>`;
-  } else {
-    console.warn(`Keine Daten für ${dataKey} gefunden`);
-  }
-}
