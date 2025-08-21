@@ -99,7 +99,7 @@ dialog::backdrop {
   cursor: pointer;
 
   .picture-showcase {
-    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 1);
   }
 }
 /*Ende - Content Klassen */
@@ -109,6 +109,7 @@ dialog::backdrop {
   object-fit: cover;
   height: 500px;
   width: 1400px;
+  border-radius: 5px;
 }
 
 .photo-dialog {
@@ -120,6 +121,7 @@ dialog::backdrop {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(22, 50, 59);
+  border-radius: 16px;
 }
 
 .dialog-header {
@@ -140,12 +142,17 @@ dialog::backdrop {
   gap: 16px;
 }
 
-.dialog-button {
-  height: 32px;
+.arrow-img {
+  width: 46px;
+}
+
+.display-index {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
 }
 
 .photo-title {
-  font-size: 32px;
+  font-size: 36px;
   color: rgb(255, 255, 255);
 }
 /* Ende - Image Dialog Klassen */

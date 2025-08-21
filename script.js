@@ -49,9 +49,9 @@ function createDialogContent(index) {
     </main>
 
     <footer class="dialog-footer">
-      <button class="dialog-button" onclick="navigateImages('prev', ${index})">zurück</button>
-        <p>${index + 1} / ${IMG_DATA.length}</p>
-      <button class="dialog-button" onclick="navigateImages('next', ${index})">Vor</button>
+        <img class="arrow-img" src="img/Pfeil_Links.png" alt="" onclick="navigateImages('prev', ${index})" />
+        <p class="display-index">${index + 1} / ${IMG_DATA.length}</p>
+      <img class="arrow-img" src="img/Pfeil_Rechts.png" alt="" onclick="navigateImages('next', ${index})" />
     </footer>
   `;
 }
