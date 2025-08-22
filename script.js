@@ -33,7 +33,7 @@ function openPhotoDialog(index) {
   IMG_DIALOG.innerHTML = createDialogContent(index);
   IMG_DIALOG.showModal();
   BODY.classList.toggle("over-hidden");
-  IMG_DIALOG.classList.add("d-flex");
+  IMG_DIALOG.classList.add("dialog-flex");
 }
 
 function createDialogContent(index) {
@@ -51,7 +51,7 @@ function createDialogContent(index) {
     <footer class="dialog-footer">
         <img class="arrow-img" src="img/Pfeil_Links.png" alt="" onclick="navigateImages('prev', ${index})" />
         <p class="display-index">${index + 1} / ${IMG_DATA.length}</p>
-      <img class="arrow-img" src="img/Pfeil_Rechts.png" alt="" onclick="navigateImages('next', ${index})" />
+        <img class="arrow-img" src="img/Pfeil_Rechts.png" alt="" onclick="navigateImages('next', ${index})" />
     </footer>
   `;
 }
@@ -80,6 +80,6 @@ IMG_DIALOG.addEventListener("click", (event) => {
   if (!inDialog) {
     IMG_DIALOG.close();
     BODY.classList.toggle("over-hidden");
-    IMG_DIALOG.classList.remove("d-flex");
+    IMG_DIALOG.classList.remove("dialog-flex");
   }
 });

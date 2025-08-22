@@ -4,14 +4,10 @@
   padding: 0;
 }
 
-.d-none {
-  display: none;
-}
-
-.d-flex {
+body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  height: 100vh;
 }
 
 .over-hidden {
@@ -38,12 +34,14 @@
   padding-right: 160px;
 }
 
-.align-flex-end {
-  align-self: flex-end;
-}
-
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dialog-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 /*Ende - Basis Klassen */
 
@@ -61,8 +59,8 @@ dialog::backdrop {
 
 /*Start - Content Klassen */
 .content {
+  flex: 1;
   background: rgb(9, 54, 72);
-  height: 100vh;
   padding-top: 64px;
 }
 
@@ -103,6 +101,13 @@ dialog::backdrop {
   }
 }
 /*Ende - Content Klassen */
+
+/* Start - Footer Klassen */
+.site-footer {
+  background: rgb(8, 26, 37);
+  height: 100px;
+}
+/* Ende - Footer Klassen */
 
 /* Start - Image Dialog Klassen */
 .dialog-img {
