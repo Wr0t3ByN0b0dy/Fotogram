@@ -2,15 +2,38 @@ const IMG_GALLERY = document.getElementById("photo-gallery");
 const IMG_DIALOG = document.getElementById("image-viewer");
 const BODY = document.getElementsByTagName("body")[0];
 const IMG_DATA = [
-  { src: "img/pictures/urlaub1.jpg", alt: "Test-Urlaub Nummer: 1" },
-  { src: "img/pictures/urlaub2.jpg", alt: "Test-Urlaub Nummer: 2" },
-  { src: "img/pictures/urlaub3.jpg", alt: "Test-Urlaub Nummer: 3" },
-  { src: "img/pictures/urlaub4.jpg", alt: "Test-Urlaub Nummer: 4" },
-  { src: "img/pictures/urlaub5.jpg", alt: "Test-Urlaub Nummer: 5" },
-  { src: "img/pictures/urlaub6.jpg", alt: "Test-Urlaub Nummer: 6" },
-  { src: "img/pictures/urlaub7.jpg", alt: "Test-Urlaub Nummer: 7" },
-  { src: "img/pictures/urlaub8.jpg", alt: "Test-Urlaub Nummer: 8" },
-  { src: "img/pictures/urlaub9.jpg", alt: "Test-Urlaub Nummer: 9" },
+  {
+    src: "img/pictures/Verona-Italien.jpg",
+    alt: "Blick über die Dächer von Verona - Italien",
+  },
+  {
+    src: "img/pictures/Gardasee-Italien.jpg",
+    alt: "Idyllischer Ausblick auf den Gardasee - Italien",
+  },
+  {
+    src: "img/pictures/Maspalomas-Spanien.jpg",
+    alt: "Weite Dünenlandschaft von Maspalomas - Spanien",
+  },
+  {
+    src: "img/pictures/Rom-Italien.jpg",
+    alt: "Das Kolosseum zeitloses Wahrzeichen Roms im Sonnenlicht - Italien",
+  },
+  {
+    src: "img/pictures/Rauris-Österreich.jpg",
+    alt: "Winteridylle in den Alpen Sonne, Schnee und klare Bergluft - Österreich",
+  },
+  {
+    src: "img/pictures/Vittoriano-Italien.jpg",
+    alt: "Monumentaler Glanz das Vittoriano in Rom erstrahlt im Sonnenlicht - Italien",
+  },
+  {
+    src: "img/pictures/Kamele-Marokko.jpg",
+    alt: "Ruhepause in der Wüste Kamele warten auf ihren nächsten Ritt - Marokko",
+  },
+  {
+    src: "img/pictures/Meer-Spanien.jpg",
+    alt: "Blick aufs endlose Meer ein Moment der Stille und Weite - Spanien",
+  },
   { src: "img/pictures/urlaub10.jpg", alt: "Test-Urlaub Nummer: 10" },
   { src: "img/pictures/urlaub11.jpg", alt: "Test-Urlaub Nummer: 11" },
   { src: "img/pictures/urlaub12.jpg", alt: "Test-Urlaub Nummer: 12" },
