@@ -27,8 +27,8 @@ const IMG_DATA = [
     alt: "Monumentaler Glanz das Vittoriano in Rom erstrahlt im Sonnenlicht - Italien",
   },
   {
-    src: "img/pictures/Kamele-Marokko.jpg",
-    alt: "Ruhepause in der Wüste Kamele warten auf ihren nächsten Ritt - Marokko",
+    src: "img/pictures/Kamele-Fuerteventura.jpg",
+    alt: "Kamele warten auf ihren nächsten Ritt - Fuerteventura",
   },
   {
     src: "img/pictures/Meer-Spanien.jpg",
