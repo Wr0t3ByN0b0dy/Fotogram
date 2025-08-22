@@ -60,6 +60,7 @@ function openPhotoDialog(index) {
 }
 
 function createDialogContent(index) {
+  const pad = (n) => n.toString().padStart(2, "0");
   return `
     <header class="dialog-header">
       <h2 class="photo-title">${IMG_DATA[index].alt}</h2>
@@ -73,7 +74,7 @@ function createDialogContent(index) {
 
     <footer class="dialog-footer">
         <img class="arrow-img" src="img/Pfeil_Links.png" alt="" onclick="navigateImages('prev', ${index})" />
-        <p class="display-index">${index + 1} / ${IMG_DATA.length}</p>
+        <p class="display-index">${pad(index + 1)} / ${IMG_DATA.length}</p>
         <img class="arrow-img" src="img/Pfeil_Rechts.png" alt="" onclick="navigateImages('next', ${index})" />
     </footer>
   `;
