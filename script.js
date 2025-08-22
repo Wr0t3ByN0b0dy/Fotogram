@@ -66,9 +66,9 @@ function createDialogContent(index) {
     </header>
 
     <main class="dialog-content">
-      <img class="dialog-img" id="dialog-image" src="${
-        IMG_DATA[index].src
-      }" alt="${IMG_DATA[index].alt}" />
+      <img class="dialog-img" src="${IMG_DATA[index].src}" alt="${
+    IMG_DATA[index].alt
+  }" />
     </main>
 
     <footer class="dialog-footer">

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("./Fonts/Raleway-Medium.ttf");
+}
+
 /*Start - Basis Klassen */
 * {
   margin: 0;
@@ -70,6 +75,7 @@ dialog::backdrop {
   justify-content: center;
   font-size: 54px;
   margin-bottom: 64px;
+  font-family: "Raleway";
 }
 
 .gallery {
@@ -158,6 +164,7 @@ dialog::backdrop {
 
 .photo-title {
   font-size: 32px;
+  font-family: "Raleway";
   color: rgb(255, 255, 255);
 }
 /* Ende - Image Dialog Klassen */
