@@ -76,6 +76,7 @@ dialog::backdrop {
   font-size: 54px;
   margin-bottom: 64px;
   font-family: "Raleway";
+  text-align: center;
 }
 
 .gallery {
@@ -118,15 +119,15 @@ dialog::backdrop {
 /* Start - Image Dialog Klassen */
 .dialog-img {
   object-fit: cover;
-  height: 500px;
-  width: 1400px;
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgb(8, 26, 37);
+  border-radius: 8px;
 }
 
 .photo-dialog {
   padding: 0px 40px 0px 40px;
-  height: 750px;
-  width: 1128px;
+  height: 600px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -144,6 +145,8 @@ dialog::backdrop {
 .dialog-content {
   display: flex;
   justify-content: center;
+  height: 450px;
+  width: 750px;
 }
 
 .dialog-footer {
@@ -168,3 +171,54 @@ dialog::backdrop {
   color: rgb(255, 255, 255);
 }
 /* Ende - Image Dialog Klassen */
+
+/* Start - Media Query Klassen */
+/* MEDIA WIDTH */
+@media (max-width: 1005px) {
+  .site-header {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 855px) {
+  .dialog-content {
+    width: 450px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .photo-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 545px) {
+  .photo-dialog {
+    width: 200px;
+  }
+
+  .dialog-content {
+    width: 200px;
+  }
+  .photo-title {
+    text-align: center;
+  }
+}
+
+/* MEDIA HEIGHT */
+@media (max-height: 670px) {
+  .dialog-content {
+    height: 350px;
+  }
+
+  .photo-dialog {
+    height: 550px;
+  }
+}
+/* Ende - Media Query Klassen */

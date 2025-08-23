@@ -4,35 +4,35 @@ const BODY = document.getElementsByTagName("body")[0];
 const IMG_DATA = [
   {
     src: "img/pictures/Verona-Italien.jpg",
-    alt: "Blick über die Dächer von Verona - Italien",
+    alt: "Die Dächer von Verona - Italien",
   },
   {
     src: "img/pictures/Gardasee-Italien.jpg",
-    alt: "Idyllischer Ausblick auf den Gardasee - Italien",
+    alt: "Ausblick auf den Gardasee - Italien",
   },
   {
     src: "img/pictures/Maspalomas-Spanien.jpg",
-    alt: "Weite Dünenlandschaft von Maspalomas - Spanien",
+    alt: "Dünenlandschaft von Maspalomas - Spanien",
   },
   {
     src: "img/pictures/Rom-Italien.jpg",
-    alt: "Das Kolosseum zeitloses Wahrzeichen Roms im Sonnenlicht - Italien",
+    alt: "Das Kolosseum - Italien",
   },
   {
     src: "img/pictures/Rauris-Österreich.jpg",
-    alt: "Winteridylle in den Alpen Sonne, Schnee und klare Bergluft - Österreich",
+    alt: "Sonne, Schnee und klare Bergluft - Österreich",
   },
   {
     src: "img/pictures/Vittoriano-Italien.jpg",
-    alt: "Monumentaler Glanz das Vittoriano in Rom erstrahlt im Sonnenlicht - Italien",
+    alt: "Das Vittoriano - Italien",
   },
   {
     src: "img/pictures/Kamele-Fuerteventura.jpg",
-    alt: "Kamele warten auf ihren nächsten Ritt - Fuerteventura",
+    alt: "Kamele - Fuerteventura",
   },
   {
     src: "img/pictures/Meer-Spanien.jpg",
-    alt: "Blick aufs endlose Meer ein Moment der Stille und Weite - Spanien",
+    alt: "Blick aufs endlose Meer - Spanien",
   },
   { src: "img/pictures/urlaub10.jpg", alt: "Test-Urlaub Nummer: 10" },
   { src: "img/pictures/urlaub11.jpg", alt: "Test-Urlaub Nummer: 11" },
