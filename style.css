@@ -196,6 +196,10 @@ dialog::backdrop {
   .photo-title {
     font-size: 24px;
   }
+
+  .dialog-img {
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 545px) {
@@ -206,8 +210,13 @@ dialog::backdrop {
   .dialog-content {
     width: 200px;
   }
+
   .photo-title {
     text-align: center;
+  }
+
+  .dialog-img {
+    object-fit: contain;
   }
 }
 
