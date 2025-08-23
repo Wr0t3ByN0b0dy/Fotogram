@@ -208,12 +208,12 @@ dialog::backdrop {
 
 @media (max-width: 545px) {
   .photo-dialog {
-    width: 300px;
+    width: 250px;
   }
 
   .dialog-content {
-    width: 300px;
-    height: auto;
+    width: 200px;
+    align-items: center;
   }
 
   .photo-title {
@@ -223,7 +223,7 @@ dialog::backdrop {
 
   .dialog-img {
     object-fit: contain;
-    height: auto;
+    height: min-content;
   }
 }
 
