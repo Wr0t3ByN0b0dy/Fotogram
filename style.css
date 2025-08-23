@@ -160,6 +160,10 @@ dialog::backdrop {
   width: 46px;
 }
 
+.arrow-img:hover {
+  cursor: pointer;
+}
+
 .display-index {
   color: rgb(255, 255, 255);
   font-size: 24px;
@@ -204,19 +208,22 @@ dialog::backdrop {
 
 @media (max-width: 545px) {
   .photo-dialog {
-    width: 200px;
+    width: 300px;
   }
 
   .dialog-content {
-    width: 200px;
+    width: 300px;
+    height: auto;
   }
 
   .photo-title {
     text-align: center;
+    font-size: 20px;
   }
 
   .dialog-img {
     object-fit: contain;
+    height: auto;
   }
 }
 
