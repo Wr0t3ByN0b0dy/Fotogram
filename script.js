@@ -34,13 +34,22 @@ const IMG_DATA = [
     src: "img/pictures/Meer-Spanien.jpg",
     alt: "Blick aufs endlose Meer - Spanien",
   },
-  { src: "img/pictures/urlaub10.jpg", alt: "Test-Urlaub Nummer: 10" },
-  { src: "img/pictures/urlaub11.jpg", alt: "Test-Urlaub Nummer: 11" },
-  { src: "img/pictures/urlaub12.jpg", alt: "Test-Urlaub Nummer: 12" },
-  { src: "img/pictures/urlaub13.jpg", alt: "Test-Urlaub Nummer: 13" },
-  { src: "img/pictures/urlaub14.jpg", alt: "Test-Urlaub Nummer: 14" },
-  { src: "img/pictures/urlaub15.jpg", alt: "Test-Urlaub Nummer: 15" },
-  { src: "img/pictures/urlaub16.jpg", alt: "Test-Urlaub Nummer: 16" },
+  {
+    src: "img/pictures/KöniglicheGärten-Spanien.jpg",
+    alt: "Königliche Gärten - Spanien",
+  },
+  { src: "img/pictures/Peñíscola-Spanien.jpg", alt: "Peñíscola - Spanien" },
+  { src: "img/pictures/Tapas-Spanien.jpg", alt: "Spanische Tapas - Spanien" },
+  {
+    src: "img/pictures/Gartenanlagen-Spanien.jpg",
+    alt: "Blick über die prachtvollen Gartenanlagen - Spanien",
+  },
+  { src: "img/pictures/Gardasee2-Italien.jpg", alt: "Gardasee - Italien" },
+  { src: "img/pictures/Calpe-Spanien.jpg", alt: "Calpe - Spanien" },
+  {
+    src: "img/pictures/Vatikanstadt-Italien.jpg",
+    alt: "Vatikanstadt - Italien",
+  },
 ];
 
 function initRenderImages() {
