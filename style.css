@@ -228,7 +228,7 @@ dialog::backdrop {
 }
 
 /* MEDIA HEIGHT */
-@media (max-height: 670px) {
+@media (max-height: 680px) {
   .dialog-content {
     height: 350px;
   }

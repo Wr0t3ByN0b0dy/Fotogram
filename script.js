@@ -16,15 +16,15 @@ const IMG_DATA = [
   },
   {
     src: "img/pictures/Rom-Italien.jpg",
-    alt: "Das Kolosseum - Italien",
+    alt: "Kolosseum im Sonnenlicht - Italien",
   },
   {
     src: "img/pictures/Rauris-Österreich.jpg",
-    alt: "Sonne, Schnee und klare Bergluft - Österreich",
+    alt: "Winter in den Alpen - Österreich",
   },
   {
     src: "img/pictures/Vittoriano-Italien.jpg",
-    alt: "Das Vittoriano - Italien",
+    alt: "Vittoriano in Rom - Italien",
   },
   {
     src: "img/pictures/Kamele-Fuerteventura.jpg",
@@ -36,7 +36,7 @@ const IMG_DATA = [
   },
   {
     src: "img/pictures/KöniglicheGärten-Spanien.jpg",
-    alt: "Königliche Gärten - Spanien",
+    alt: "Königliche Gartenanlage - Spanien",
   },
   { src: "img/pictures/Peñíscola-Spanien.jpg", alt: "Peñíscola - Spanien" },
   { src: "img/pictures/Tapas-Spanien.jpg", alt: "Spanische Tapas - Spanien" },
@@ -48,7 +48,7 @@ const IMG_DATA = [
   { src: "img/pictures/Calpe-Spanien.jpg", alt: "Calpe - Spanien" },
   {
     src: "img/pictures/Vatikanstadt-Italien.jpg",
-    alt: "Vatikanstadt - Italien",
+    alt: "Vatikanstadt bei Nacht - Italien",
   },
 ];
 
@@ -62,13 +62,13 @@ function initRenderImages() {
 }
 
 function openPhotoDialog(index) {
-  IMG_DIALOG.innerHTML = createDialogContent(index);
+  IMG_DIALOG.innerHTML = createPhotoDialogContent(index);
   IMG_DIALOG.showModal();
   BODY.classList.toggle("over-hidden");
   IMG_DIALOG.classList.add("dialog-flex");
 }
 
-function createDialogContent(index) {
+function createPhotoDialogContent(index) {
   const pad = (n) => n.toString().padStart(2, "0");
   return `
     <header class="dialog-header">
@@ -91,10 +91,12 @@ function createDialogContent(index) {
 
 function navigateImages(direction, index) {
   if (direction === "next") {
-    IMG_DIALOG.innerHTML = createDialogContent((index + 1) % IMG_DATA.length);
+    IMG_DIALOG.innerHTML = createPhotoDialogContent(
+      (index + 1) % IMG_DATA.length
+    );
   }
   if (direction === "prev") {
-    IMG_DIALOG.innerHTML = createDialogContent(
+    IMG_DIALOG.innerHTML = createPhotoDialogContent(
       (index - 1 + IMG_DATA.length) % IMG_DATA.length
     );
   }
