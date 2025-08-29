@@ -55,7 +55,7 @@ const IMG_DATA = [
 function initRenderImages() {
   IMG_GALLERY.innerHTML = IMG_DATA.map(
     (img, index) =>
-      `<button class="picture-button" onclick="openPhotoDialog(${index})">
+      `<button class="showcase-button" onclick="openPhotoDialog(${index})">
         <img class="picture-showcase" src="${img.src}" alt="${img.alt}" />
       </button>`
   ).join("");
