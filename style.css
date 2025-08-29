@@ -212,18 +212,28 @@ dialog::backdrop {
   }
 
   .dialog-content {
-    width: 200px;
+    width: 250px;
     align-items: center;
   }
 
   .photo-title {
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .dialog-img {
     object-fit: contain;
     height: min-content;
+  }
+}
+
+@media (max-width: 350px) {
+  .photo-dialog {
+    width: 200px;
+  }
+
+  .dialog-content {
+    width: 200px;
   }
 }
 
