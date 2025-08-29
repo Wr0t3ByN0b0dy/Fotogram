@@ -55,7 +55,7 @@ const IMG_DATA = [
 function initRenderImages() {
   IMG_GALLERY.innerHTML = IMG_DATA.map(
     (img, index) =>
-      `<button class="showcase-button" onclick="openPhotoDialog(${index})">
+      `<button aria-haspopup="dialog" aria-controls="image-viewer" class="showcase-button" onclick="openPhotoDialog(${index})">
         <img class="picture-showcase" src="${img.src}" alt="${img.alt}" />
       </button>`
   ).join("");
@@ -64,6 +64,7 @@ function initRenderImages() {
 function openPhotoDialog(index) {
   IMG_DIALOG.innerHTML = createPhotoDialogContent(index);
   IMG_DIALOG.showModal();
+  IMG_DIALOG.focus();
   BODY.classList.toggle("over-hidden");
   IMG_DIALOG.classList.add("dialog-flex");
 }
@@ -72,7 +73,9 @@ function createPhotoDialogContent(index) {
   const pad = (n) => n.toString().padStart(2, "0");
   return `
     <header class="dialog-header">
-      <h2 class="photo-title">${IMG_DATA[index].alt}</h2>
+      <h2 id="photo-dialog-title" class="photo-title">${
+        IMG_DATA[index].alt
+      }</h2>
     </header>
 
     <main class="dialog-content">
@@ -82,9 +85,9 @@ function createPhotoDialogContent(index) {
     </main>
 
     <footer class="dialog-footer">
-        <img class="arrow-img" src="img/Pfeil_Links.png" alt="" onclick="navigateImages('prev', ${index})" />
+        <button class="arrow-btn" tabindex="0" onclick="navigateImages('prev', ${index})"><img class="arrow-img" src="img/Pfeil_Links.png" alt="" /></button>
         <p class="display-index">${pad(index + 1)} / ${IMG_DATA.length}</p>
-        <img class="arrow-img" src="img/Pfeil_Rechts.png" alt="" onclick="navigateImages('next', ${index})" />
+        <button class="arrow-btn" tabindex="0" onclick="navigateImages('next', ${index})"><img class="arrow-img" src="img/Pfeil_Rechts.png" alt="" /></button>
     </footer>
   `;
 }
